@@ -1,8 +1,9 @@
 # HOLA
 
-[Linki](posts/hola.md)
-
-[Linki2](posts/)
-
-[Linki3](test.md)
-
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
