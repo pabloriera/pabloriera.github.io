@@ -2,10 +2,12 @@
 layout: post
 title: "Demo"
 quote: "quoting"
-date: 2017-04-14 19:53:19
-image:
-  url: /media/2014-02-27-hello-cosette/cover.jpg
-video: false
+date: 2017-04-14 20:08:19
+
+    image:
+  url: /home/miles/Dropbox/PABLo/Software/pabloriera.github.io/media/2017-04-14-primesound/cover.jpg
+
+        video: false
 comments: true
 theme_color: 302F2D
 ---
@@ -11795,6 +11797,39 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">OSError</span>                                   Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-186-1f002d1ef064&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># %run ../utils.py</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> siteroot<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;/home/miles/Dropbox/PABLo/Software/pabloriera.github.io&#39;</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>convertmovepush<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Demo&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;primesound&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;quoting&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;/media/2014-02-27-hello-cosette/cover.jpg&#39;</span><span class="ansi-blue-fg">,</span>siteroot<span class="ansi-blue-fg">=</span>siteroot<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-185-862460fbce3a&gt;</span> in <span class="ansi-cyan-fg">convertmovepush</span><span class="ansi-blue-fg">(title, name, quote, imageurl, siteroot)</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span>     <span class="ansi-green-fg">if</span> <span class="ansi-blue-fg">&#39;cover.jpg&#39;</span> <span class="ansi-green-fg">in</span> os<span class="ansi-blue-fg">.</span>listdir<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;.&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     34</span>         mediafolder<span class="ansi-blue-fg">=</span>siteroot<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">&#39;/media/&#39;</span><span class="ansi-blue-fg">+</span>newname<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg">---&gt; 35</span><span class="ansi-red-fg">         </span>os<span class="ansi-blue-fg">.</span>mkdir<span class="ansi-blue-fg">(</span>mediafolder<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     36</span>         shutil<span class="ansi-blue-fg">.</span>copy2<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;cover.jpg&#39;</span><span class="ansi-blue-fg">,</span>mediafolder<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     37</span>         header+=&#34;&#34;&#34;image:\n  url: {imageurl}\n
+
+<span class="ansi-red-fg">OSError</span>: [Errno 17] File exists: &#39;/home/miles/Dropbox/PABLo/Software/pabloriera.github.io/media/2017-04-14-primesound&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
