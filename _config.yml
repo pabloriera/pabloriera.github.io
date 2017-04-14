@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Dependencies
 markdown:	kramdown
 # Permalinks
@@ -60,6 +59,3 @@ google_analytics:
 
 # Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
 theme_color:       7E9576
-=======
-theme: jekyll-theme-cayman
->>>>>>> de884604d183e89d2466d582224232e07da8328e
