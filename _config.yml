@@ -4,9 +4,9 @@ markdown:	kramdown
 permalink:	/blog/:title
 
 # Setup
-title:            Thinny
+title:            Ansatz
 tagline:          'blog'
-description:      'My personal blog.'
+description:      'fuzzy heuristic guesstimation'
 url:              https://pabloriera.github.io
 baseurl:          
 commentsystem:    google
@@ -17,7 +17,7 @@ author:
   url:            https://pablo-riera.com.ar
 
 paginate:         5
-
+future:           true
 # Custom vars
 icon:             /assets/images/icon.png
 cover:            /assets/images/cover.jpg
@@ -59,3 +59,4 @@ google_analytics:
 
 # Default Theme Color for Chrome on Android Lollipop (Use RGB ColorCode without `#`, e.g.: `db5945`)
 theme_color:       7E9576
+gems: [jekyll-paginate]
