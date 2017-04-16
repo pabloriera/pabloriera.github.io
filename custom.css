@@ -2,11 +2,18 @@
     text-align:center;
     width:100%;
 }
-.output_subarea {
-    display:inline-block;
-}
 */
+.output_subarea {
+    flex:none;
+}
+
 
 body {
 	padding:0px;
 }
+
+div.prompt {display:none}
+div.cell {width:75%}
+
+div#notebook {font-size: none,
+			  line-height: none;	}
