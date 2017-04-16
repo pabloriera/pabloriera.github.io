@@ -1,22 +1,35 @@
-/*.output_area {
-    text-align:center;
-    width:100%;
+div.output_subarea {
+   /*flex:none;*/
+   overflow-x: visible;
+   max-width: none;
 }
-*/
-.output_subarea {
-    flex:none;
-}
-
 
 body {
 	padding:0px;
 }
 
+
 div.prompt {display:none}
-div.cell {width:75%; padding:0px;}
+div.cell {width:100%; padding:0px;}
 
 div#notebook {font-size: 20px;
 			  line-height: 1.5;
 			  padding-top: 0px;}
 
 /*div#article {font-family: initial;}			  */
+
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 600px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
