@@ -13,7 +13,10 @@ body {
 }
 
 div.prompt {display:none}
-div.cell {width:75%}
+div.cell {width:75%; padding:0px;}
 
-div#notebook {font-size: none,
-			  line-height: none;	}
+div#notebook {font-size: 20px;
+			  line-height: 1.5;
+			  padding-top: 0px;}
+
+/*div#article {font-family: initial;}			  */
