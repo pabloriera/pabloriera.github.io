@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="webmidi.min.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
+
+  <style>
+
+  .nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+ }
+
+ .overlay {
+  padding: 5px;
+  border-radius: 5px;
+  color: #000;
+  background-color: #fff;
+  position:relative;
+  top:50%;
+}
+
+</style>
+
+</head>
+<html>
+<body style="margin:0px;">
+  <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+
+      <div  class="overlay">
+          <label id="input"> 
+            <input id="query" value='cats' type="text" onkeypress="keyWordsearch(event)"/>
+          </label> 
+        </div>
+
+    <div class="container-fluid">
+      <div id='divo' class="row">
+
+       
+
+        <script>
+
+          var input_vis = false;
+          var pid = 0;
+
+          document.addEventListener('keydown', function(event) {
+
+
+            if(event.keyCode >=49 && event.keyCode <=57)
+            {
+
+              if(!input_vis)
+              {
+                pid = event.keyCode-49;
+                console.log(pid);
+              }
+
+            }
+
+            if(event.keyCode == 27) {
+
+              input_vis=!input_vis;
+              console.log(input_vis);
+
+              if(input_vis)
+              {
+                $("#input").show();
+                $("#input").focus();
+              }
+              else
+                $("#input").hide();
+
+            }
+          });
+
+          var idlist = ['yKg_3kyIhHc','jRHQPG1xd9o','Z73FthAvt34','tLu7EfIuiX8','GKnu7_9VznY','NG-LATBZNBs',
+          'EeQhHzkrU3I','34_SfP7ZCXA','h8Q-jlHBcXM'];
+
+
+          for(var c=0;c<idlist.length;c++)
+          {
+            $('#divo').append('<div class="col-sm-6 col-md-4 nopadding" id="player'+c+'"></div>');
+          }
+
+
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var players =[];
+
+      function onYouTubeIframeAPIReady() {
+
+        var c = 0;
+        idlist.forEach(function(ytid){
+
+          var player = new YT.Player('player'+c, {
+            height: '360',
+            width: '640',
+            videoId: ytid,
+            playerVars:{'autoplay': 1},
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+
+          players.push(player)
+          c+=1;
+
+        });
+
+        $('iframe')
+
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+        event.target.setVolume(0);
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+
+      function onPlayerStateChange(event) {
+        console.log(event);
+      }
+    </script>
+
+
+    <script type="text/javascript">
+      WebMidi.enable(function (err) {
+
+        console.log(WebMidi.inputs);
+
+        var input = WebMidi.getInputByName("nanoKONTROL2 MIDI 1");
+
+        input.addListener('controlchange', "all", function(e) {
+          console.log(e.value);
+          players[e.controller.number].setVolume(e.value/127.0*100.0);
+        });
+      }
+
+      );
+    </script>
+
+    <script>
+      function keyWordsearch(e){
+
+        if(e.keyCode==13)
+        { 
+            gapi.client.setApiKey('AIzaSyBsCH0dagc2WSZP_OaPMQZMh1ahg_Szk3o');
+            gapi.client.load('youtube', 'v3', function(){
+
+            var q = $('#query').val();
+            var request = gapi.client.youtube.search.list({
+              q: q,
+              part: 'snippet', 
+              maxResults: 10
+            });
+
+            request.execute(function(response){
+
+              var srchItems = response.result.items;
+
+              $.each(srchItems, function(index, item){
+              
+                if(item.id.hasOwnProperty('videoId'))
+                {
+
+                  var vid = item.id.videoId;
+                  console.log([item,pid,vid]);
+                  players[pid].loadVideoById(vid);
+                  return false;
+                }
+              });
+
+              
+            });
+
+
+        });
+      }
+    }
+
+  </script>
+</body>
+</html>
