@@ -8,14 +8,4 @@ permalink: about/
   About
 </div>
 
-PhD Pablo E. Riera (Buenos Aires, Argentina -1984)
-
-Researcher, musician, coder and teacher. Holds a Phd in Physical Sciences and is currently a postdoct at Sensorimotor Dynamics Laboratory of National University of Quilmes working working on human time intervals production.
-
-He has done work on voice and timbre perception, auditory system modeling, musical acoustics, hydrology and photonic crystals. He studied neuroscience and high performance computing at Instituto Balseiro.
-
-He directs the Spacetime Cartography and Sound Art research project at the National University of Quilmes together with Hernán Kerlleñevic where they developed musical performances using neural networks and real-time electroencephalography.
-
-He studied theater at Ricardo Bartis' study and with Daniel Casablanca. He studied guitar with Hugo Fumero and piano and composition with Marcelo Katz. He belongs to the MARDER art and music improvisation collective. He has given live performances with bands such as Helmut Róbot, El Tronador, The Wrichies and Operadora.
-
-Currently he performs music with mathematical tools such as differential equations and artificial intelligence.
+Researcher, programmer, teacher, musician. Doctor of the University of Buenos Aires in Physical Sciences. Currently doing a postdoctoral degree in the Laboratory of Applied Artificial Intelligence of the Faculty of Exact and Natural Sciences of the UBA on the detection of mental states in speech. Among other scientific activities, he ventured into photonics, psychoacoustics, neuroscience and high performance computing. On the artistic level, he has made performances using neuronal simulations and real-time electroencephalography controlling and generating video and sound. He has given classes, talks and taught workshops on the use of mathematical and computational tools for the generation and manipulation of image and sound. He currently performs audiovisual performances with live coding and artificial intelligence.
