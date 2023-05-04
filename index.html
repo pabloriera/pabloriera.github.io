@@ -11,9 +11,12 @@ title: Home
 </header>
 <div id="middle">
 	
-<h1><a href="/about/">About me</a></h1>
 	
 <div id="post-list">
+	
+	<h1 id="post-list"><a href="/about/">About me</a></h1>
+
+	
 	{% for post in paginator.posts %}
 		<div>
 			<span class="post-date">{{ post.date | date_to_long_string }}</span>
