@@ -14,9 +14,12 @@ title: Home
 	
 <div id="post-list">
 	
-	<h1 id="post-list"><a href="/about/">About me</a></h1>
-
+	<h1><a href="/about/">Bio</a></h1>
+	</br>
 	
+	<h1>Posts</h1>
+	</br>
+
 	{% for post in paginator.posts %}
 		<div>
 			<span class="post-date">{{ post.date | date_to_long_string }}</span>
