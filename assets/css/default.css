@@ -184,6 +184,17 @@ h3 {
 	padding-bottom: 110px;
 }
 
+#myarticle {
+	font-family: Fenix, Georgia, "Times New Roman", serif;
+	font-weight: 400;
+	letter-spacing: 0px;
+	font-size: 20px;
+	color: #313131;
+	line-height: 1.5;
+	position: relative;
+}
+
+
 #article, #comments {
 	font-family: Fenix, Georgia, "Times New Roman", serif;
 	font-weight: 400;
@@ -493,6 +504,37 @@ pre code {
 }
 
 .copyright a {
+	text-decoration: none;
+}
+
+#mysecret {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	top: 50px;
+	padding-bottom: 80px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	font-size: 20pt;
+	color: #313131;
+	line-height: 1.5;
+	position: relative;
+}
+
+#mysecret h1 {
+	font-weight: bold;
+	font-size: 30pt;
+	line-height: 44px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+#mysecret a {
+	color: #555;
+	text-decoration: none;
+	transition-duration: .5s;
+}
+
+#mysecret a:hover {
+	color: #2a7ead;
 	text-decoration: none;
 }
 
