@@ -92,7 +92,7 @@
       min-height:168px;
       display:grid;
       place-items:center;
-      padding:12px;
+      padding:0;
       color:var(--green);
       text-align:center;
       font-size:10px;
@@ -104,6 +104,14 @@
         var(--green-soft);
       border:2px solid var(--line);
       box-shadow:4px 4px 0 var(--line);
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      margin:0;
+      border:0;
     }
     .contact{
       display:grid;
@@ -251,10 +259,11 @@
   </style>
 </head>
 <body>
-  <article class="sheet" aria-label="One-page CV for Pablo Ernesto Riera">
+  <article class="sheet" aria-label="CV for Pablo Ernesto Riera">
     <div class="microbar">
-      <span>One-page CV · Research + Art</span>
-      <span class="badge">Low-resource static HTML</span>
+      <span>Research + Art</span>
+      <span class="badge"></span>
+      
     </div>
 
     <header>
@@ -269,7 +278,7 @@
           <div><b>Web</b><a href="https://pabloriera.github.io/">pabloriera.github.io</a></div>
         </div>
       </div>
-      <aside class="photo" aria-label="Photo placeholder">Photo<br>space</aside>
+      <aside class="photo" aria-label="Profile photo"><img src="assets/images/mug.png" alt="Portrait of Pablo Ernesto Riera"></aside>
     </header>
 
     <main>
